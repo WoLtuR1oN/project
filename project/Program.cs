@@ -1,6 +1,6 @@
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Globalization;
-namespace homework1
+namespace project
 
 {
     internal class Program
@@ -16,6 +16,7 @@ namespace homework1
 
             // Создание переменной без инициализации
             // int number;
+            Console.Write("Hi! ");
 
             Console.Write("Enter your name: ");
 
@@ -145,14 +146,30 @@ namespace homework1
             bool likesprogramming1 = true;
             Console.WriteLine(
                 "Вас зовут " + name2 + " и вам " + age2 + " лет" + " ростом: " + height2 + " метра" + ", пол: " + gender2 + ", любит программирование: " + likesprogramming1);
+
             // Личные изучения:
             Console.WriteLine();
             Console.WriteLine("Личные изучения:");
-
-            int age3 = 99;
-            if (age3 < 18)
+            Console.WriteLine("Сколько вам лет?");
+            int number5 = int.Parse(Console.ReadLine());
+            if (number5 > 25)
             {
-                Console.WriteLine("Вы несовершеннолетний");
+                Console.WriteLine("Ты взрослый");
+            }
+            else
+            {
+                Console.WriteLine("Ты ещё молодой");
+            }
+            Console.WriteLine("У вас есть 124.25 гривны? yes/no");
+            string hasmoney = Console.ReadLine();
+            if (hasmoney == "да" || hasmoney == "yes")
+            {
+                Console.WriteLine("Тебе хватает денег");
+            }
+            else
+            {
+                Console.WriteLine("Тебе не хватает денег");
+            
             }
         }
     }
