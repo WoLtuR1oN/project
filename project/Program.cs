@@ -188,8 +188,6 @@ namespace project
             else
             {
                 Console.WriteLine("Тебе не хватает денег");
-
-            
             }
             */
 
