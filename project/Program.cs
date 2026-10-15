@@ -16,8 +16,8 @@ namespace project
 
             // Создание переменной без инициализации
             // int number;
-            Console.Write("Hi! ");
 
+            Console.Write("Hi! ");
             Console.Write("Enter your name: ");
 
             string name = Console.ReadLine();
@@ -80,6 +80,7 @@ namespace project
 
 
             // Личные тесты:
+            /*
             Console.WriteLine();
             Console.WriteLine("Личные тесты:");
 
@@ -119,6 +120,18 @@ namespace project
 
             bool trueorfalse = false;
             Console.WriteLine("Правда ли, что 2 + 2 = 1? " + trueorfalse);
+
+            int num = 10;
+            double numm = 3;
+            Console.WriteLine(num / numm);
+            
+            int a = 5;
+            int b = 2;
+            Console.WriteLine(a / b);
+
+            float c = 10.2f;
+            float d = 3.1f;
+            Console.WriteLine(c / d);
 
             Console.WriteLine(
                 "Типы данных: Знаковые: sbyte -128 до 127, short -32000 до 32000, int -2,1m до 2,1m, long -9,2m до 9,2m" 
@@ -175,7 +188,54 @@ namespace project
             else
             {
                 Console.WriteLine("Тебе не хватает денег");
+
             
+            }
+            */
+
+            // Лучшая версия прошлого кода (надеюсь)
+            int coins1 = 10;
+            int swordPrice2 = 1;
+
+            Console.WriteLine("You have 10 coins");
+            Console.Write("Do you want to buy a sword? (yes/no): ");
+
+            string response = Console.ReadLine();
+            if (response == "yes")
+            {
+                if (coins1 >= swordPrice2)
+                {
+                    Console.WriteLine("You bought the sword!");
+                    coins1 -= swordPrice2;
+                }
+                else
+                {
+                    Console.WriteLine("You don't have enough coins.");
+                }
+            }
+            else if (response == "no")
+            {
+                Console.WriteLine("You kept your coins.");
+            }
+            else
+            {
+                Console.WriteLine("Wrong.");
+            }
+
+            Console.Write("Do you want to see your coins? (yes/no): ");
+
+            string response1 = Console.ReadLine();
+            if (response1 == "yes")
+            {
+                Console.WriteLine($"You have {coins1} coins left.");
+            }
+            else if (response1 == "no")
+            {
+                Console.WriteLine("Have a good day!");
+            }
+            else
+            {
+                Console.WriteLine("Wrong.");
             }
         }
     }
