@@ -1,4 +1,6 @@
-﻿namespace project
+﻿using System.Net;
+
+namespace project
 {
     internal class Program
     {
@@ -70,13 +72,99 @@
              */
 
 
-            // Тесты
-            string name = "Alex";
-            int age = int.Parse("18");
-            Console.WriteLine($"Hello, {name}! You are {age} years old.");
+            // Домашнее задание:
 
 
-            // Начало домашнего задания:
+            // 1. Почитать про системы счисления.
+            Console.Write("BINARY: ");
+            int number = 255;
+
+            string binary = Convert.ToString(number, 2);
+
+            Console.WriteLine(binary);
+
+            // 2. Написать программу с анкетой, которая будет запрашивать у пользователя какие-то данные.  
+
+            Console.Write("\nSURVEY: ");
+
+
+            // Name
+            Console.Write("\nWhat is your name? ");
+            string name = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(name))
+            {
+                Console.Write("Please enter a valid name: ");
+                name = Console.ReadLine();
+            }
+
+
+            // Age
+            Console.Write("How old are you? ");
+            string input = Console.ReadLine();
+            int age = 0;
+
+            while (!int.TryParse(input, out age) || age < 0)
+            {
+                Console.Write("Please enter a valid age: ");
+                input = Console.ReadLine();
+            }
+
+
+            // Gender
+            Console.Write("What is your gender? 1 - Male, 2 - Female: ");
+            string answer = (Console.ReadLine());
+            string gender = "";
+
+            while (answer != "1" && answer != "2")
+            {
+                Console.Write("Please enter a valid answer (1 or 2): ");
+                answer = Console.ReadLine();
+            }
+            gender = (answer == "1") ? "Male" : "Female";
+
+
+            // Height
+            Console.Write("How tall are you? ");
+            string heightInput = Console.ReadLine();
+            float height = 0;
+
+            while (!float.TryParse(heightInput, out height) || height < 0)
+            {
+                Console.Write("Please enter a valid height: ");
+                heightInput = Console.ReadLine();
+            }
+
+
+            // Student
+            Console.Write("Are you a student? true/false: ");
+            string studentInput = Console.ReadLine();
+            bool isStudent = false;
+
+            while (!bool.TryParse(studentInput, out isStudent))
+            {
+                Console.Write("Please enter true or false: ");
+                studentInput = Console.ReadLine();
+            }
+
+
+            // Favorite letter
+            Console.Write("What is your favorite letter? ");
+            char favoriteLetter = char.Parse(Console.ReadLine());
+
+
+            // Output the survey results
+            Console.WriteLine($"\nHello, {name}!");
+            Console.WriteLine($"Age: {age} years old");
+            Console.WriteLine($"Gender: {gender}");
+            Console.WriteLine($"Height: {height} cm");
+            Console.WriteLine($"Student: {isStudent}");
+            Console.WriteLine($"Favorite letter: {favoriteLetter}");
+
+
+            // 3. Почитать про математические операторы и написать программу, которая решает след. математические выражения
+
+
         }
     }
 }
