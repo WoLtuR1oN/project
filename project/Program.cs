@@ -150,7 +150,15 @@ namespace project
 
             // Favorite letter
             Console.Write("What is your favorite letter? ");
-            char favoriteLetter = char.Parse(Console.ReadLine());
+            string letterInput = Console.ReadLine();
+
+            char favoriteLetter = '\0';
+
+            while (!char.TryParse(letterInput, out favoriteLetter))
+            {
+                Console.Write("Please enter exactly one character: ");
+                letterInput = Console.ReadLine();
+            }
 
 
             // Output the survey results
