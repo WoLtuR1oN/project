@@ -77,7 +77,7 @@ namespace project
 
             // 1. Почитать про системы счисления.
             Console.Write("BINARY: ");
-            int number = 255;
+            int number = 255; // Восемь единиц
 
             string binary = Convert.ToString(number, 2);
 
@@ -172,6 +172,19 @@ namespace project
 
             // 3. Почитать про математические операторы и написать программу, которая решает след. математические выражения
 
+            Console.Write("\nnumber a: ");
+            double a = double.Parse(Console.ReadLine());
+
+            Console.Write("number b: ");
+            double b = double.Parse(Console.ReadLine());
+
+            double result1 = (a - 1) / (b + 1);
+            double result2 = ((b + a) * a) / 2;
+            double result3 = (a % b) + Math.Pow(a, b);
+
+            Console.WriteLine($"\nfirst: {result1}");
+            Console.WriteLine($"second: {result2}");
+            Console.WriteLine($"third: {result3}");
 
         }
     }
