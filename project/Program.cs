@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Globalization;
+using System.Net;
 
 namespace project
 {
@@ -173,10 +174,11 @@ namespace project
             // 3. Почитать про математические операторы и написать программу, которая решает след. математические выражения
 
             Console.Write("\nnumber a: ");
-            double a = double.Parse(Console.ReadLine());
+            double a = double.Parse(
+            Console.ReadLine()!.Replace(',', '.'), CultureInfo.InvariantCulture);
 
             Console.Write("number b: ");
-            double b = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine()!.Replace(',', '.'), CultureInfo.InvariantCulture);
 
             double result1 = (a - 1) / (b + 1);
             double result2 = ((b + a) * a) / 2;
@@ -185,7 +187,6 @@ namespace project
             Console.WriteLine($"\nfirst: {result1}");
             Console.WriteLine($"second: {result2}");
             Console.WriteLine($"third: {result3}");
-
         }
     }
 }
