@@ -7,14 +7,16 @@ namespace project
         static void Main(string[] args)
         {
             // Игровой автомат
+            Console.WriteLine("Шаг ставки = 5$");
+
             Console.Write("Введите ставку от 5 до 100 долларов: ");
 
             string input = Console.ReadLine()!;
 
             if (!int.TryParse(input, out int bet) || bet < 5 || bet > 100 || bet % 5 != 0)
             {
-                Console.WriteLine("Некорректная ставка. Пожалуйста, введите значение от 5 до 100 долларов.");
-                return;
+                Console.WriteLine("Введите значение от 5 до 100 долларов.");
+                return; // Без return при вводе букв выигрыш будет 0 в любом случае
             }
 
             Random random = new Random();
@@ -23,7 +25,7 @@ namespace project
             int b = random.Next(1, 10);
             int c = random.Next(1, 10);
 
-            Console.WriteLine("\nБарабан гамбы:");
+            Console.WriteLine("\nБарабан выдал:");
             Console.WriteLine($"Результат: {a} {b} {c}");
 
             double coefficient = 0;
@@ -46,7 +48,6 @@ namespace project
             {
                 coefficient = (a == 7 ? 15 : a) * 1.25;
                 message = a == 7 ? "Мини-джекпот!" : "Выигрышная пара!";
-
             }
             // Есть хотя бы одна семерка
             else if (a == 7 || b == 7 || c == 7)
@@ -67,11 +68,10 @@ namespace project
             }
             else
             {
-                double winnings = bet * coefficient;
-
+                double win = bet * coefficient;
                 Console.WriteLine(message);
-                Console.WriteLine($"Коэффициент: {coefficient:F2}");
-                Console.WriteLine($"Ваш выигрыш: {winnings:F2} $");
+                Console.WriteLine($"Коэффициент: {coefficient:F2}"); // Удобно ставить ограничение на количество знаков после запятой coefficient: F2 / F3 / F4
+                Console.WriteLine($"Ваш выигрыш: {win:F2} $");
             }
 
             Console.WriteLine("\nИгра завершена.");
